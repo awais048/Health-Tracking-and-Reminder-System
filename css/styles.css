@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4ff; /* Soft background */
+    color: #343a40; /* Darker text for contrast */
+    padding: 20px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+
+}
+
+.contain{
+    height: 60px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.header h1 {
+    font-size: 3.5em; /* Larger title size */
+    color: #113768; /* Bright primary color */
+    margin: 20px 0;
+    font-weight: bold;
+    text-transform: uppercase; /* Uppercase for header */
+    letter-spacing: 2px; /* Spacing for visual clarity */
+    animation: fadeIn 1s; /* Fade-in effect */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    display: flex; /* Flexbox for layout */
+}
+
+
+.dashboard {
+    flex: 1; /* Fill remaining space */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Gap between tiles */
+    padding: 20px; /* Padding to the dashboard */
+}
+
+.tile {
+    background: linear-gradient(90deg, rgba(205,212,232,1) 0%, rgba(200,196,215,1) 40%, rgba(182,179,223,1) 100%);
+    color: #343a40; /* Dark text */
+    border-radius: 15px;
+    padding: 30px; /* Padding for tiles */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center items horizontally */
+    height: 200px; /* Fixed height for tiles */
+}
+
+.tile:hover {
+    transform: translateY(-10px) rotate(2deg); /* Lift and slightly rotate tile on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.tile h2 {
+    margin-top: 10px;
+    font-size: 1.6em; /* Title font size */
+    text-align: center; /* Center text */
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind other content */
+}
+
+
+.icon {
+    font-size: 5em; /* Icon size */
+    margin-bottom: 10px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.tile:hover .icon {
+    transform: scale(1.2); /* Scale icon on hover */
+    color: #1457af; /* Change icon color on hover */
+}
+
+@media (max-width: 800px) {
+    .sidebar {
+        width: 100px; /* Reduce sidebar width on smaller screens */
+    }
+
+    .sidebar a {
+        font-size: 1em; /* Adjust font size for sidebar links on smaller screens */
+    }
+
+    .tile {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .tile h2 {
+        font-size: 1.4em; /* Adjust font size for smaller screens */
+    }
+
+    .icon {
+        font-size: 3.5em; /* Icon size for smaller screens */
+    }
+}
